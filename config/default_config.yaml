@@ -1,0 +1,83 @@
+# Default configuration for NLP-Enhanced IaC Security Analyzer
+
+# NLP Analysis Configuration
+nlp:
+  model_name: "bert-base-uncased"
+  max_sequence_length: 512
+  batch_size: 32
+  cache_predictions: true
+  semantic_similarity_threshold: 0.7
+  
+  # Risk keywords with associated weights (0.0 - 1.0)
+  risk_keywords:
+    admin: 0.9
+    root: 0.95
+    full: 0.8
+    all: 0.8
+    wildcard: 0.85
+    temp: 0.7
+    temporary: 0.7
+    test: 0.6
+    dev: 0.5
+    debug: 0.6
+    bypass: 0.9
+    override: 0.8
+    emergency: 0.85
+    backdoor: 0.95
+    service: 0.4
+    application: 0.3
+    user: 0.2
+  
+  # Risk concepts for semantic analysis
+  risk_concepts:
+    - "administrative access"
+    - "full permissions"
+    - "policy modification"
+    - "role assumption"
+    - "privilege escalation"
+    - "security bypass"
+    - "temporary access"
+    - "emergency access"
+    - "development testing"
+    - "debugging access"
+
+# Path Detection Configuration
+path_detection:
+  max_path_length: 10
+  min_risk_threshold: 0.3
+  top_k_paths: 10
+  
+  # Risk calculation weights (must sum to 1.0)
+  keyword_weight: 0.4
+  semantic_weight: 0.6
+  
+  # Risk aggregation methods
+  node_aggregation: "sum"      # "sum", "max", "average"
+  edge_aggregation: "product"  # "product", "sum", "min"
+
+# Visualization Configuration
+visualization:
+  graph_width: "100%"
+  graph_height: "800px"
+  node_size_range: [20, 100]
+  edge_width_range: [1, 10]
+  
+  # Color scheme for risk levels
+  low_risk_color: "#90EE90"     # Light green
+  medium_risk_color: "#FFD700"  # Gold
+  high_risk_color: "#FF6B6B"    # Light red
+  critical_risk_color: "#DC143C" # Crimson
+  
+  # Risk thresholds for color coding
+  medium_risk_threshold: 0.4
+  high_risk_threshold: 0.7
+  critical_risk_threshold: 0.9
+
+# General Settings
+verbose: false
+log_level: "INFO"
+output_format: "html"  # "html", "json", "both"
+
+# Performance Settings
+max_workers: 4
+memory_limit_gb: 8.0
