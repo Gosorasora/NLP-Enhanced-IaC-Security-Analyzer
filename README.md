@@ -440,32 +440,8 @@ NLP-Enhanced-IaC-Security-Analyzer/
 
 ---
 
-## 🤝 기여하기
-
-이슈와 PR을 환영합니다!
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
 ## 📝 라이선스
 
 MIT License - 자유롭게 사용, 수정, 배포 가능합니다.
 
----
 
-## 🙏 감사의 말
-
-- Hugging Face - BERT 모델 제공
-- HashiCorp - Terraform 생태계
-- 오픈소스 커뮤니티
-
----
-
-**보안팀이 실제로 필요로 하는 인사이트를 제공합니다.**
-
-*Made with ❤️ for DevSecOps teams*
